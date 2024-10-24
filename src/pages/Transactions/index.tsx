@@ -7,11 +7,15 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "./styles"
-import { useTransactionContext } from "../../contexts/TransactionContext/useTransactionContext"
+import { dateFormater, priceFormater } from "../../utils/formatter"
+import { useContextSelector } from "use-context-selector"
+import { TransactionContext } from "../../contexts/TransactionContext/TransactionContext"
 
 export function Transactions() {
 
-  const { transactions } = useTransactionContext()
+  const transactions  = useContextSelector(TransactionContext, (context) => {
+    return context.transactions
+  })
 
   return (
     <div>
@@ -29,11 +33,12 @@ export function Transactions() {
               <td width="50%">{transaction.description}</td>
               <td>
                 <PriceHighlight variant={transaction.type}>
-                  {transaction.price}
+                  {transaction.type === "outcome" && "- "}
+                  {priceFormater.format(transaction.price)}
                   </PriceHighlight>
               </td>
               <td>{transaction.category}</td>
-              <td>{transaction.createdAt}</td>
+              <td>{dateFormater.format(new Date(transaction.createdAt))}</td>
               </tr>
               )
             })}

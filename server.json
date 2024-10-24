@@ -1,20 +1,20 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "description": "Desenvolvimento de Site",
+      "description": "Salario",
+      "price": 2000,
+      "category": "Salario",
       "type": "income",
-      "category": "venda",
-      "price": 14000,
-      "createdAt": "2024-10-18T13:25:40.570Z"
+      "createdAt": "2024-10-23T17:51:10.694Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "description": "Do Job",
+      "description": "Sushi",
+      "price": 90,
+      "category": "Comida",
       "type": "outcome",
-      "category": "Diversão",
-      "price": 1000,
-      "createdAt": "2024-10-18T13:30:40.570Z"
+      "createdAt": "2024-10-23T17:51:31.697Z",
+      "id": 2
     }
   ]
 }

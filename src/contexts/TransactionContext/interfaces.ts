@@ -12,3 +12,10 @@ export interface Transaction {
 export interface TransactionProviderProps {
   children: ReactNode;
 }
+
+export interface CreateTransactionInput {
+  description: string,
+  price: number,
+  category: string,
+  type: "outcome" | "income",
+}
